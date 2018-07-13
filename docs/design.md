@@ -152,11 +152,13 @@ Data that is just accessed locally in conventional Prometheus setups has to be t
 
 Typical object storage prices per GB are at about $0.02. The number of retrievals (typically priced at $0.004 per 10,0000) by the store nodes strongly depend on individual querying pattern. Adding 20% to the total storage cost to account for retrievals and running of store nodes seems like a conservative estimate.
 
-Suppose we want to store 100TB of metric data. At about 1.07 bytes/sample in total data size, this is equivalent to storing 6.5 years of data across an average of 1 million active time series.  
+Suppose we want to store 100TB of metric data. At about 1.07 bytes/sample in total data size, this is equivalent to:
+* storing 48.88 years of data across an average of 1 million active time series with default 15s scrape interval.
+* storing 3.25 years of data across an average of 1 million active time series with 1s scrape interval.
+
 The cost for this amount of metric data would cost approximately $2400/month on top of the baseline Prometheus setup.
-In return, being able to reduce the retention time of Prometheus instances from weeks to hours will provide cost savings for local SSD or network block storage (typically $0.17/GB) and reduce memory consumption. This calculation does not yet account for shorter retention spans of low-priority data and downsampling.
-
-
+In return, being able to reduce the retention time of Prometheus instances from weeks to hours will provide cost savings for local SSD or network block storage (typically $0.17/GB) and reduce memory consumption.
+This calculation does not yet account for shorter retention spans of low-priority data and downsampling.
 
 [tsdb-format]: https://github.com/prometheus/tsdb/tree/master/Documentation/format
 [tsdb-talk]: https://www.slideshare.net/FabianReinartz/storing-16-bytes-at-scale-81282712
