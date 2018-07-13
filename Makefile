@@ -123,7 +123,7 @@ vet:
 
 vendor: Gopkg.toml Gopkg.lock | $(DEP)
 	@echo ">> dep ensure"
-	@$(DEP) ensure
+	@$(DEP) ensure $(DEPARGS)
 
 $(GOIMPORTS):
 	@echo ">> fetching goimports"

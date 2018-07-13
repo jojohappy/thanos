@@ -20,6 +20,12 @@ jobs:
               echo "Awesome! GCS integration tests are enabled."
             fi
       - run: make format
+      - run: echo ${GOPATH}
+      - run: make deps DEPARGS="-v"
+      - run: pwd
+      - run: echo ${GOPATH}
+      - run: cat ./Gopkg.lock
+      - run: cat ${GOPATH}/src/github.com/improbable-eng/thanos/pkg/objstore/s3/s3.go
       - run: make errcheck
       - run:
           name: "Run all tests"
