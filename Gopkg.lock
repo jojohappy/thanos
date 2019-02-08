@@ -496,7 +496,7 @@
   revision = "05ee40e3a273f7245e8777337fc7b46e533a9a92"
 
 [[projects]]
-  digest = "1:9dc95aa109fe070fa467fe3ebfeee246bd3db123f1b96b7f595315fa0424707b"
+  digest = "1:7f4eca5274d9a71928143346fb0ad21f53cff3bc849c716539958f0465c69fd7"
   name = "github.com/prometheus/prometheus"
   packages = [
     "discovery/file",
@@ -517,7 +517,8 @@
     "util/testutil",
   ]
   pruneopts = ""
-  revision = "3bd41cc92c7800cc6072171bd4237406126fa169"
+  revision = "62e591f928ddf6b3468308b7ac1de1c63aa7fcf3"
+  version = "v2.7.1"
 
 [[projects]]
   digest = "1:b7ffd9413e1a0f664257748d0d9c9b4662e0a70db9e87fac86b01437c803d08d"
